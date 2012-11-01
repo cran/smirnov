@@ -17,18 +17,16 @@ is a binary (absence-presence matrix) where taxa are rows and characters are col
 \details{
 Function will remove all non-informative characters (e.g., columns of all zeroes) and transform every value greater than 1 to 1 (in order to avoid non-binary matrices).
 
-Please note that function will calculate scaled coefficients Txx and Txy instead of their unscaled variants (txx and txy) -- see the chapter 11 of Smirnov (1969) book.
+Please note that function will calculate scaled coefficients Txx and Txy instead of their unscaled variants (txx and txy): see the chapter 11 of Smirnov's (1969) book.
 }
 \value{
 Rectangular matrix where diagonal is filled with Txx coefficients and other cells with Txy coefficients. To convert this matrix to similarity matrix, diagonal should be filled with ones. To convert output to "normal" dissimilarity matrix, use "as.dist(1-smirnov(x))".
 }
 \references{
-Smirnov E. S. 1969. Taxonomical analysis. Moscow, Moscow University Publishers. [in Russian].
+Smirnov, E. S. 1969. Taxonomical analysis. Moscow, Moscow University Publishers. [in Russian].
 }
 \author{
 Alexey Shipunov
-}
-\note{
 }
 
 \seealso{
@@ -42,7 +40,5 @@ s3 <- c(1,0,1,0,1,0,0,1,0,1,0,1,0,0,1)
 smirnov(rbind(s1, s2, s3))
 # s3 is most original; s1 and s2 are more similar than other pairs
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ classif }
+\keyword{classif}
 
